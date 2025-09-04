@@ -50,16 +50,18 @@ else ()
 endif ()
 
 include_directories(
-        Library/include
+        Drivers/CMSIS/Core/include
+        Drivers/CMSIS/Device/include
+        Drivers/StdPeriph_Driver/include
         User/include
-        Start/include
 )
 
 add_definitions(-DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F103xB -DSTM32F10X_MD)
 
 file(GLOB_RECURSE SOURCES
-        "Start/*.*"
-        "Library/*.*"
+        "Drivers/CMSIS/Core/*.*"
+        "Drivers/CMSIS/Device/*.*"
+        "Drivers/StdPeriph_Driver/*.*"
         "User/*.*"
 )
 
